@@ -15,7 +15,7 @@ addButton.addEventListener("click", function(e) {
         //Create a li
     const newTodo = document.createElement('li')
     newTodo.classList.add('todo-item')
-        //Add the input text in the tododiv as a li
+        //Add the input text in the todolist
     newTodo.innerText = text
         //append the list with the div
     todoDiv.appendChild(newTodo)
@@ -31,7 +31,7 @@ addButton.addEventListener("click", function(e) {
     trashButton.innerHTML = '<i class="fa-solid fa-trash"></i>'
     trashButton.classList.add('delete-button')
     todoDiv.appendChild(trashButton);
-
+    //add the single list in the div
     todoList.appendChild(todoDiv)
 
 })

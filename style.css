@@ -10,7 +10,7 @@ body {
     background: linear-gradient(to right, rgb(253, 200, 48), rgb(253, 181, 48));
     color: rgb(15, 20, 20);
     font-family: "Poppins", sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     min-height: 100vh;
 }
 
@@ -40,4 +40,44 @@ form button {
     background: rgb(240, 157, 102);
 }
 
-.todo-container {}
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+    border-radius: 50px;
+}
+
+.todo {
+    margin: 0.5rem;
+    background: white;
+    /* padding: 0.4rem 10rem; */
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo li {
+    flex: 1;
+    margin: 0 0.5rem;
+}
+
+.complete-button,
+.delete-button {
+    background: rgb(240, 157, 102);
+    color: white;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.complete-button {
+    background: green;
+}
