@@ -60,6 +60,7 @@ form button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation: deleteItem 0.5s ease 0.1;
 }
 
 .todo li {
@@ -80,4 +81,20 @@ form button {
 
 .complete-button {
     background: green;
+}
+
+.fa-trash,
+.fa-check {
+    pointer-events: none;
+}
+
+.completed {}
+
+@keyframes deleteItem {
+    from {
+        left: -20px;
+    }
+    to {
+        right: 100%;
+    }
 }
