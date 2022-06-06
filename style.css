@@ -1,0 +1,43 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, rgb(253, 200, 48), rgb(253, 181, 48));
+    color: rgb(15, 20, 20);
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 2rem;
+}
+
+header,
+form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,
+form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+}
+
+form button {
+    color: white;
+    cursor: pointer;
+    background: rgb(240, 157, 102);
+}
+
+.todo-container {}
