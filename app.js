@@ -1,8 +1,9 @@
 const input = document.querySelector('.todo-input');
 const addButton = document.querySelector('.todo-button')
 const todoList = document.querySelector('.todo-list')
-
-//Check input is empty or not
+const filterOption = document.querySelector('.filter-todo')
+const todo = document.querySelector('.todo')
+console.log(todo);
 
 //Event Listener
 addButton.addEventListener("click", function(e) {
@@ -45,7 +46,6 @@ addButton.addEventListener("click", function(e) {
     //Create the element and attaching the listener
 })
 
-
 ///Delete List and check
 todoList.addEventListener("click", function(e) {
     const item = e.target;
@@ -53,14 +53,56 @@ todoList.addEventListener("click", function(e) {
     console.log(item);
     if (item.classList[0] === 'delete-button') {
         const parentElement = item.parentElement;
-        parentElement.remove()
+        parentElement.classList.add('slideAnimation')
+        parentElement.addEventListener('transitionend', () => {
+            parentElement.remove()
+        })
     }
     //CheckMark Item
     if (item.classList[0] === 'complete-button') {
         const todo = item.parentElement;
         todo.classList.toggle('completed')
-
     }
+})
 
+//FIlter Todos
+
+// filterOption.addEventListener("click", function filterTodo(e) {
+//     const todos = filterOption.children;
+//     // console.log(typeof(todos));
+//     todos.forEach((todo) => {
+//         console.log(todo.target);
+//     });
+
+// })
+
+// var val = filterOption.options[filterOption.selectedIndex].value;
+// console.log(val);
+
+filterOption.addEventListener("click", function(e) {
+
+    const todos = todoList.childNodes
+    todos.forEach((todo) => {
+        if (e.target.value === "all") {
+            todo.style.display = "flex";
+        } else if (e.target.value === "completed") {
+            if (todo.classList.contains('completed')) {
+                todo.style.display = "flex";
+            } else {
+                todo.style.display = "none";
+            }
+        } else if (e.target.value === "uncompleted") {
+            if (!todo.classList.contains('completed')) {
+                todo.style.display = "flex";
+            } else {
+                todo.style.display = "none";
+            }
+        }
+    })
 
 })
+
+// if (allList.classList.contains("completed")) {
+//     var data = allList.classList.contains("completed")
+//     console.log(data);
+// }

@@ -60,7 +60,7 @@ form button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: deleteItem 0.5s ease 0.1;
+    transition: all 0.5s ease-in-out;
 }
 
 .todo li {
@@ -88,13 +88,61 @@ form button {
     pointer-events: none;
 }
 
-.completed {}
-
-@keyframes deleteItem {
-    from {
-        left: -20px;
-    }
-    to {
-        right: 100%;
-    }
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
 }
+
+.slideAnimation {
+    opacity: 0;
+    transform: rotateZ(10deg) translateY(100px);
+    transform-origin: left;
+}
+
+.filter-todo {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select {
+    color: rgb(240, 157, 102);
+    min-width: 15rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    background: rgb(240, 157, 102);
+    top: 0;
+    right: 0;
+    color: white;
+    padding: 1rem;
+    pointer-events: none;
+}
+
+
+/* option {
+    color: rgb(240, 157, 102);
+    width: 10rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    line-height: 1rem;
+    border: none;
+    outline: none;
+} */
